@@ -15,4 +15,9 @@ int main()
 
 	assert( r.front() == 2 );
 
+	for ( const auto& v: r )
+	{
+		std::cout << v << " ";
+	}
+	std::cout << '\n';
 }
