@@ -1,9 +1,11 @@
 #include <iostream>
 #include <ring.h>
 #include <array>
+#include <utility>
 
 int main()
 {
+	using namespace std::rel_ops;
 	std::array< int, 3 > a;
 
 	sg14::ring_span< int > r( a.begin(), a.end() );
