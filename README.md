@@ -16,4 +16,4 @@ to the same directory this one is checked out to in order to have it work just u
 	make
 	./ringTest
 
-/enjoy/
+_enjoy_
