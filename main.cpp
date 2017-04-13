@@ -6,20 +6,20 @@
 int main()
 {
 	using namespace std::rel_ops;
-	std::array< int, 3 > a;
+	std::array< int, 3 > baseArray;
 
-	sg14::ring_span< int > r( a.begin(), a.end() );
+	sg14::ring_span< int > ringBuffer( baseArray.begin(), baseArray.end() );
 
-	r.push_back( 1 );
-	r.push_back( 2 );
-	r.push_back( 3 );
-	r.push_back( 5 );
+	ringBuffer.push_back( 1 );
+	ringBuffer.push_back( 2 );
+	ringBuffer.push_back( 3 );
+	ringBuffer.push_back( 5 );
 
-	assert( r.front() == 2 );
+	assert( ringBuffer.front() == 2 );
 
-	for ( const auto& v: r )
+	for ( const auto& value : ringBuffer )
 	{
-		std::cout << v << " ";
+		std::cout << value << " ";
 	}
 	std::cout << '\n';
 }
