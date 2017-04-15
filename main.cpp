@@ -2,6 +2,7 @@
 #include <ring.h>
 #include <array>
 #include <utility>
+#include <numeric>
 
 int main()
 {
@@ -22,4 +23,10 @@ int main()
 		std::cout << value << " ";
 	}
 	std::cout << '\n';
+
+	std::array< int, 3 > filterCoeff = {1, 2, 1 };
+
+	// in interrupt loop or the like
+	ringBuffer.push_back( 7 );
+	std::cout << std::inner_product( ringBuffer.begin(), ringBuffer.end(), filterCoeff.begin() , 0 );
 }
