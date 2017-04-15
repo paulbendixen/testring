@@ -6,7 +6,6 @@
 
 int main()
 {
-	using namespace std::rel_ops;
 	std::array< int, 3 > baseArray;
 
 	sg14::ring_span< int > ringBuffer( baseArray.begin(), baseArray.end() );
@@ -24,9 +23,9 @@ int main()
 	}
 	std::cout << '\n';
 
-	std::array< int, 3 > filterCoeff = {1, 2, 1 };
+	std::array< int, 3 > filterCoefficients = {1, 2, 1 };
 
 	// in interrupt loop or the like
 	ringBuffer.push_back( 7 );
-	std::cout << std::inner_product( ringBuffer.begin(), ringBuffer.end(), filterCoeff.begin() , 0 );
+	std::cout << std::inner_product( ringBuffer.begin(), ringBuffer.end(), filterCoefficients.begin() , 0 );
 }
