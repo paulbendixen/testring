@@ -9,5 +9,8 @@ set( CMAKE_EXPORT_COMPILE_COMMANDS ON )
 set( CMAKE_CXX_FLAGS "-O2 ${CMAKE_CXX_FLAGS}" )
 add_definitions( -D_USE_MATH_DEFINES )
 
-set(SOURCE_FILES main.cpp signalTest.cpp signalTest.hpp)
+set(SOURCE_FILES main.cpp signalTest.cpp signalTest.hpp basicTest.cpp basicTest.hpp)
 add_executable(ringTest ${SOURCE_FILES})
+
+enable_testing()
+add_test( unittest ringTest )
